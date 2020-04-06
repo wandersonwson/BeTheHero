@@ -39,7 +39,7 @@ module.exports = {
             .where("id", id)
             .select("ong_id")
             .first();
-        if (caso.ong_id != ong_id) {
+        if (caso.ong_id !== ong_id) {
             return response.status(401).json({ "erro": "Operação não permitida." });
         }
         await conexao("caso")
